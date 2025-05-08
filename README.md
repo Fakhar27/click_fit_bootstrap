@@ -1,11 +1,3 @@
-# ClickFit
-
-## Overview
-
-ClickFit is a dynamic web application featuring a responsive user interface, secure file handling, and integration with external APIs to provide engaging content. This project showcases a full-stack implementation using modern web technologies.
-
----
-
 ## 🛠️ Tech Stack
 
 **Frontend:**
