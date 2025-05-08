@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - ./upload_images:/usr/src/app/upload_images
+    networks:
+      - clickfit-network
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=clickfit_db
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - clickfit-network
+    restart: unless-stopped
+
+networks:
+  clickfit-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
